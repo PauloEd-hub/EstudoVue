@@ -2,12 +2,9 @@
   <div>
     <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
     <p v-else>Estou em buscade emprego</p>
-    <p>Utilizo as seguintes tecnologias:</p>
-
+    <p>Utilizo as seguintes tecnologias para back-end</p>
     <ul>
-      <li>Javascript</li>
-      <li>Vuejs</li>
-      <li>Java</li>
+      <li v-for="(technology, index) in backend_technologies" v-bind:key="index">{{ technology }}</li>
     </ul>
     <div>
       <button @click="showEmail">Mostrar email</button>
@@ -33,6 +30,7 @@ export default {
       mostrar_email: false,
       email: "pauloedu.silva@gmail.com",
       meu_link: "https://google.com",
+      backend_technologies: ["Java", "Vuejs", "Spring Boot"]
     };
   },
   methods: {
